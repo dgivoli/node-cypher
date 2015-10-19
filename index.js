@@ -16,7 +16,8 @@ exports.createClient = createClient = function ( hostOrConnOpts , clientOptsOrCb
   
   request.get({
     json : true,
-    url : httpOpts.host + httpOpts.base
+    url : httpOpts.host + httpOpts.base,
+    headers:  httpOpts.headers || {}
   },function(err,result,json){
     if (err) {
       return cb(err);
